@@ -89,7 +89,7 @@ class Qt < Formula
 
     if build.with? "mysql"
       args << "-plugin-sql-mysql"
-      (buildpath/"brew_shim/mysql_config").write <<-EOS.undent
+      (buildpath/"brew_shim/mysql_config").write <<~EOS.undent
         #!/bin/sh
         if [ x"$1" = x"--libs" ]; then
           mysql_config --libs | sed "s/-lssl -lcrypto//"
@@ -136,14 +136,14 @@ class Qt < Formula
     Pathname.glob("#{bin}/*.app") { |app| mv app, libexec }
   end
 
-  def caveats; <<-EOS.undent
+  def caveats; <<~EOS.undent
     We agreed to the Qt opensource license for you.
     If this is unacceptable you should uninstall.
     EOS
   end
 
   test do
-    (testpath/"hello.pro").write <<-EOS.undent
+    (testpath/"hello.pro").write <<~EOS.undent
       QT       += core
       QT       -= gui
       TARGET = hello
@@ -153,7 +153,7 @@ class Qt < Formula
       SOURCES += main.cpp
     EOS
 
-    (testpath/"main.cpp").write <<-EOS.undent
+    (testpath/"main.cpp").write <<~EOS.undent
       #include <QCoreApplication>
       #include <QDebug>
 
