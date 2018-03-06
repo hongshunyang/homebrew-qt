@@ -1,0 +1,12 @@
+This formula is keg-only, which means it was not symlinked into /usr/local,
+because Qt 5 has CMake issues when linked.
+
+If you need to have this software first in your PATH run:
+  echo 'export PATH="/usr/local/opt/qt/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find this software you may need to set:
+    LDFLAGS:  -L/usr/local/opt/qt/lib
+    CPPFLAGS: -I/usr/local/opt/qt/include
+For pkg-config to find this software you may need to set:
+    PKG_CONFIG_PATH: /usr/local/opt/qt/lib/pkgconfig
+
