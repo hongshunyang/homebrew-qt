@@ -20,7 +20,7 @@ Not modified.
 ## How it use?
 
     brew uninstall qt  # if you have old installation
-    brew install uncovertruth/qt/qt --with-qtwebkit
+    brew install hongshunyang/qt/qt --with-qtwebkit
 
 ## Alternatives
 
